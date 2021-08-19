@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">ToDo_Bootcamp</string>
+    <string name="app_name">To Do List</string>
+    <string name="title_tasks">Tarefas</string>
+    <string name="title_crate_task_input">Título</string>
+    <string name="btn_cancel_task">Cancelar</string>
+    <string name="btn_create_task">Criar Tarefa</string>
 </resources>
