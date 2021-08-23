@@ -4,4 +4,7 @@
     <string name="title_crate_task_input">Título</string>
     <string name="btn_cancel_task">Cancelar</string>
     <string name="btn_create_task">Criar Tarefa</string>
+    <string name="title_create_task">Criar Tarefa</string>
+    <string name="date_input_task">Data</string>
+    <string name="hour_input_task">Hora</string>
 </resources>
