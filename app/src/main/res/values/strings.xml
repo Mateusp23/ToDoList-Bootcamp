@@ -7,4 +7,5 @@
     <string name="title_create_task">Criar Tarefa</string>
     <string name="date_input_task">Data</string>
     <string name="hour_input_task">Hora</string>
+    <string name="description_create_task_input">Descrição</string>
 </resources>
