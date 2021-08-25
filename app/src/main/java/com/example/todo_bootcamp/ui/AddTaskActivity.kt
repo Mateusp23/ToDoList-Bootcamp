@@ -1,5 +1,6 @@
 package com.example.todo_bootcamp.ui
 
+import android.app.Activity
 import android.nfc.Tag
 import android.os.Bundle
 import android.util.Log
@@ -63,7 +64,9 @@ class AddTaskActivity : AppCompatActivity() {
                 description = binding.tilDescription.text
             )
             TaskDataSource.insertTask(task)
-            Log.e("TAG", "insertListeners" + TaskDataSource.getList())
+
+            setResult(Activity.RESULT_OK)
+            finish()
         }
     }
 }

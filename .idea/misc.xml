@@ -5,6 +5,8 @@
       <map>
         <entry key="..\:/DIO/ToDo_Bootcamp/app/src/main/res/layout/activity_add_task.xml" value="0.25" />
         <entry key="..\:/DIO/ToDo_Bootcamp/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/DIO/ToDo_Bootcamp/app/src/main/res/layout/task_item.xml" value="0.33" />
+        <entry key="..\:/DIO/ToDo_Bootcamp/app/src/main/res/menu/popup_menu.xml" value="0.209375" />
       </map>
     </option>
   </component>
