@@ -4,6 +4,7 @@ import android.app.Activity
 import android.nfc.Tag
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.StateSet.TAG
 import com.example.todo_bootcamp.databinding.ActivityAddTaskBinding
@@ -25,6 +26,15 @@ class AddTaskActivity : AppCompatActivity() {
         binding = ActivityAddTaskBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        if(intent.hasExtra(TASK_ID)){
+            val taskId = intent.getIntExtra(TASK_ID, 0)
+            TaskDataSource.findById(taskId)?.let {
+                binding.tilTitle.text = it.title
+                binding.tilDescription.text = it.description
+                binding.tilDate.text = it.date
+                binding.tilHour.text = it.hour
+            }
+        }
         insertListeners()
     }
 
@@ -57,16 +67,28 @@ class AddTaskActivity : AppCompatActivity() {
         }
 
         binding.btnCreateTask.setOnClickListener {
-            val task = Task(
-                title = binding.tilTitle.text,
-                date = binding.tilDate.text,
-                hour = binding.tilHour.text,
-                description = binding.tilDescription.text
-            )
-            TaskDataSource.insertTask(task)
-
-            setResult(Activity.RESULT_OK)
-            finish()
+            val title = binding.tilTitle.text.toString()
+            val date = binding.tilDate.text.toString()
+            if (title.isNotEmpty() && date.isNotEmpty()) {
+                val task = Task(
+                    title = binding.tilTitle.text,
+                    date = binding.tilDate.text,
+                    hour = binding.tilHour.text,
+                    description = binding.tilDescription.text,
+                    id = intent.getIntExtra(TASK_ID, 0)
+                )
+                TaskDataSource.insertTask(task)
+                setResult(Activity.RESULT_OK)
+                finish()
+            } else {
+                Toast.makeText(applicationContext, "Preencha os campos necessarios", Toast.LENGTH_SHORT).show()
+                binding.tilTitle.error = "Preencher"
+                binding.tilDate.error = "Preencher"
+            }
         }
+    }
+
+    companion object {
+        const val TASK_ID = "task_id"
     }
 }

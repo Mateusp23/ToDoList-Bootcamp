@@ -11,4 +11,6 @@
     <string name="label_new_task">Nova tarefa</string>
     <string name="label_edit">Editar</string>
     <string name="label_delete">Deletar</string>
+    <string name="title_you_not_tasks">Ops! Você ainda não possui\nnenhuma tarefa</string>
+    <string name="splash_title">To Do List ✔</string>
 </resources>
